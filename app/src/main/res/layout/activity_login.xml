@@ -14,20 +14,20 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/textView"
+        <ImageView
+            android:id="@+id/imageView"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_height="150dp"
             android:layout_weight="1"
-            android:height="200dp"
             android:gravity="center"
-            android:text="Log In"
-            android:textSize="50sp"
-            android:textColor="@color/white"
-            android:textStyle="bold"/>
+            android:src="@drawable/ic_pro"
+            android:scaleType="fitCenter"
+
+             />
     </LinearLayout>
 
     <LinearLayout
@@ -43,8 +43,8 @@
             android:layout_weight="1"
             android:height="13dp"
             android:layout_marginTop="60dp"
-            android:gravity="center"
             android:inputType="text"
+            android:gravity="center"
             android:hint="Username:"
             android:textColorHint="@color/white"
             android:textSize="18dp"
@@ -52,6 +52,8 @@
             android:textColor="@color/white"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
+            android:padding="10dp"
+            android:drawableLeft="@drawable/ic_pro"
 
             />
 
@@ -66,23 +68,26 @@
             android:id="@+id/password"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:background="@drawable/editetext_background"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:height="13dp"
-            android:layout_marginTop="60dp"
+            android:background="@drawable/editetext_background"
             android:gravity="center"
-            android:inputType="text"
             android:hint="Password:"
+            android:inputType="text"
+            android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:textSize="18dp"
             android:textStyle="bold"
-            android:textColor="@color/white"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:drawableLeft="@drawable/ic_loc"
+            android:padding="10dp"
 
             />
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

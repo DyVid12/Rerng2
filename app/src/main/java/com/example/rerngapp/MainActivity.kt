@@ -1,6 +1,6 @@
 package com.example.rerngapp
 
-import MoviesViewModel
+
 import android.os.Bundle
 import android.widget.Button
 import android.widget.FrameLayout
@@ -17,7 +17,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class MainActivity : AppCompatActivity() {
     private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var frameLayout: FrameLayout
-    private val moviesViewModel: MoviesViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()

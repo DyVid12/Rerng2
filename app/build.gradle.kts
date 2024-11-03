@@ -51,7 +51,12 @@ dependencies {
     implementation("com.squareup.picasso:picasso:2.71828")
     implementation ("com.squareup.retrofit2:retrofit:2.9.0")
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    // Activity and Fragment KTX
+    implementation("androidx.activity:activity-ktx:1.7.2")
+    implementation("androidx.fragment:fragment-ktx:1.5.7")
 
+    // ViewModel library
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
 
 
 }

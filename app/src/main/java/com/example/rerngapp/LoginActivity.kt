@@ -34,7 +34,7 @@ class LoginActivity() : AppCompatActivity(), Parcelable {
 
             if (username.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Please fill in your username and password", Toast.LENGTH_SHORT).show()
-            } else if (username == "test" && password == "test") {
+            } else if (username == "ravit" && password == "ravit") {
                 // Start MainActivity upon successful login
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
