@@ -6,13 +6,13 @@
     android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/image1"
+        android:id="@+id/upcommingimage"
         android:layout_width="130dp"
         android:layout_height="160dp"
         android:src="@drawable/avatar"
         android:scaleType="centerCrop"/>
     <TextView
-        android:id="@+id/tittlemovies"
+        android:id="@+id/upcommingtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Name Movies"
@@ -20,7 +20,7 @@
         android:textSize="10dp"
         android:textStyle="bold"/>
     <TextView
-        android:id="@+id/relistdate"
+        android:id="@+id/upcommingrelistdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/Green"

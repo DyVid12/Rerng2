@@ -10,4 +10,9 @@
     <color name="black_ground">#E7D5D5</color>
     <color name="Red">#B81313</color>
     <color name="Pink">#DB9696</color>
+    <color name="green1">#104C64</color>
+    <color name="silver">#C6C6D0</color>
+    <color name="brown1">#C0754D</color>
+    <color name="Blue1">#BBABCF</color>
+    <color name="Green">#0F8C8C</color>
 </resources>

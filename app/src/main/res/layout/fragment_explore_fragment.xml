@@ -15,7 +15,7 @@
             android:id="@+id/searchView"
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="25dp"
             android:layout_marginEnd="10dp"
             android:layout_marginStart="10dp"
             android:queryHint="Search Movies"
@@ -24,11 +24,126 @@
             android:focusableInTouchMode="true"
             android:iconifiedByDefault="false"
             />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp">
+
+            <TextView
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TopMovies"
+                android:textColor="@color/Orange"
+                android:layout_marginRight="210dp"
+                android:layout_marginLeft="15dp"/>
+
+            <TextView
+                android:id="@+id/topmovies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/Orange"
+                android:text="See All"
+                android:textSize="18dp"/>
+
+        </LinearLayout>
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:id="@+id/recycleData"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+            <TextView
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+                android:textColor="@color/Orange"
+            android:text="Popular"
+            android:layout_marginRight="240dp"
+            android:layout_marginLeft="15dp"/>
+
+            <TextView
+                android:id="@+id/pupularmovies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="See All"
+                android:textColor="@color/Orange"
+                android:textSize="18dp"/>
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclepupularmovies"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+            <TextView
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/Orange"
+                android:text="Upcoming"
+                android:layout_marginRight="219dp"
+                android:layout_marginLeft="15dp"/>
+
+            <TextView
+                android:id="@+id/upcomingMovies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="See All"
+                android:textColor="@color/Orange"
+                android:textSize="18dp"/>
+
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="20dp"
+            android:id="@+id/recycleupcommingmovies"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+            <TextView
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/Orange"
+                android:text="Now playing"
+                android:layout_marginRight="200dp"
+                android:layout_marginLeft="15dp"/>
+
+            <TextView
+                android:id="@+id/nowplayingmovies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="See All"
+                android:textColor="@color/Orange"
+                android:textSize="18dp"/>
+
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="20dp"
+            android:id="@+id/recyclenowplaying"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
     </LinearLayout>
 

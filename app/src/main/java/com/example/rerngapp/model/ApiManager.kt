@@ -11,7 +11,7 @@ object ApiManager {
         if(dataService == null){
 
             val retrofit = Retrofit.Builder()
-                .baseUrl("https://api.themoviedb.org/3/")
+                .baseUrl("http://api.themoviedb.org/3/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
             dataService = retrofit.create(MovieApiService::class.java)

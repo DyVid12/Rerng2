@@ -24,8 +24,8 @@ class datamoviesadapter:ListAdapter<Result, datamoviesadapter.DataViewHolder>(Da
     class DataViewHolder(private var binding: ViewHolderDataBinding): RecyclerView.ViewHolder(binding.root){
         fun binDataMovies(result:Result){
             Picasso.get().load("https://image.tmdb.org/t/p/w500${result.poster_path}").into(binding.image1)
-            binding.tittlemovies.text ="Text:${result.title}"
-            binding.relistdate.text ="Relistdate:${result.release_date}"
+            binding.tittlemovies.text ="${result.title}"
+            binding.relistdate.text ="${result.release_date}"
         }
 
     }

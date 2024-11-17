@@ -11,14 +11,15 @@ import com.example.rerngapp.model.Result
 import com.example.rerngapp.model.State
 import kotlinx.coroutines.launch
 
-class Dataviewmodel: ViewModel() {
+class DataPupularViewModel: ViewModel() {
+
     private val _dataState = MutableLiveData<ApiState<List<Result>>>()
     val dataState: LiveData<ApiState<List<Result>>> get() = _dataState
-    fun loadData(page: Int) {  // Pass page as a parameter
+    fun loadPupulardata(page: Int) {  // Pass page as a parameter
         val dataService = ApiManager.getDataService()
         viewModelScope.launch {
             try {
-                val dataResponse = dataService.getTopRatedMovies(page) // No need for execute()
+                val dataResponse = dataService.getPopularMovies(page) // No need for execute()
                 _dataState.postValue(ApiState(State.SUCCESS, dataResponse.results))
             } catch (ex: Exception) {
                 Log.e("ruppite", "Error while loading data: $ex")
@@ -26,6 +27,4 @@ class Dataviewmodel: ViewModel() {
             }
         }
     }
-
-
 }
