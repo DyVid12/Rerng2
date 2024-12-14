@@ -42,4 +42,14 @@ interface MovieApiService {
         @Path("movie_id") movieId: Int,
         @Query("api_key") apiKey: String = "98c7299151e5aceaa7bdf85714f3676e"
     ): ApiResponse<Result>
+
+    @GET("search/movie")
+    suspend fun searchMoviesByTitle(
+        @Query("query") title: String,
+        @Query("page") page: Int,
+        @Query("api_key") apiKey: String = "98c7299151e5aceaa7bdf85714f3676e"
+    ): ApiResponse<List<Result>>
+
+
 }
+

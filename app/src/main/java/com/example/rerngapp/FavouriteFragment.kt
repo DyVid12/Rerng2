@@ -1,59 +1,75 @@
 package com.example.rerngapp
 
+import MovieViewModel
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.rerngapp.adapter.MovieAdapter
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+import kotlinx.coroutines.flow.collect
 
-/**
- * A simple [Fragment] subclass.
- * Use the [FavouriteFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class FavouriteFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    // ViewModel instance
+//    private val movieViewModel: MovieViewModel by viewModels()
+//    private lateinit var movieAdapter: MovieAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_favourite, container, false)
+        val view = inflater.inflate(R.layout.fragment_favourite, container, false)
+
+        // Initialize RecyclerView
+//        val recyclerView = view.findViewById<RecyclerView>(R.id.recycleData)
+//        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+//        movieAdapter = MovieAdapter()
+//        recyclerView.adapter = movieAdapter
+
+        // Initialize SearchView
+//        val searchView = view.findViewById<android.widget.SearchView>(R.id.searchView)
+//        searchView.setOnQueryTextListener(object : android.widget.SearchView.OnQueryTextListener {
+//            override fun onQueryTextSubmit(query: String?): Boolean {
+//                query?.let {
+//                    if (it.isNotEmpty()) {
+//                        searchMovies(it) // Trigger search
+//                    } else {
+//                        Toast.makeText(requireContext(), "Please enter a search query", Toast.LENGTH_SHORT).show()
+//                    }
+//                }
+//                return true
+//            }
+//
+//            override fun onQueryTextChange(newText: String?): Boolean {
+//                // Optional: Trigger search while typing
+//                return true
+//            }
+//        })
+
+        // Observe ViewModel for search results
+//        lifecycleScope.launchWhenStarted {
+//            movieViewModel.searchResults.collect { results ->
+//                results?.let {
+//                    if (it.isNotEmpty()) {
+//                        movieAdapter.submitList(it) // Update adapter
+//                    } else {
+//                        Toast.makeText(requireContext(), "No movies found", Toast.LENGTH_SHORT).show()
+//                    }
+//                }
+//            }
+//        }
+
+        return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment FavouriteFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            FavouriteFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
+//    private fun searchMovies(query: String) {
+//        movieViewModel.searchMovies(query, 1) // Trigger ViewModel to search movies
+//    }
 }

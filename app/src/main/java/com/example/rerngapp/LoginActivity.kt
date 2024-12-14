@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Parcel
 import android.os.Parcelable
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -31,6 +32,8 @@ class LoginActivity() : AppCompatActivity(), Parcelable {
         loginButton.setOnClickListener {
             val username = userEdt.text.toString()
             val password = passEdt.text.toString()
+
+            Log.i("Test Credentials","Username: $username and Password : $password")
 
             if (username.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Please fill in your username and password", Toast.LENGTH_SHORT).show()

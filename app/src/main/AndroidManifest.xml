@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -16,18 +17,23 @@
         android:theme="@style/Theme.RerngApp"
         tools:targetApi="31">
         <activity
+            android:name=".MovieViewModel"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.TopMovieActivity"
+            android:exported="false" />
+        <activity
             android:name=".NowplayingMoviesActivity2"
             android:exported="false" />
         <activity
             android:name=".UpcomingMoviesActivity2"
             android:exported="false" />
-
-        <activity android:name=".PopularMoviesActivity2"
+        <activity
+            android:name=".PopularMoviesActivity2"
             android:exported="false" />
         <activity
             android:name=".TopMoviesActivity2"
             android:exported="false" />
-
         <activity
             android:name=".IntroActivity"
             android:exported="true">
