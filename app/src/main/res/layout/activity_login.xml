@@ -20,14 +20,14 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
-            android:layout_marginTop="50dp"
             android:layout_height="150dp"
+            android:layout_marginTop="50dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:src="@drawable/ic_pro"
             android:scaleType="fitCenter"
+            android:src="@drawable/ic_pro"
 
-             />
+            />
     </LinearLayout>
 
     <LinearLayout
@@ -36,7 +36,7 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/username"
+            android:id="@+id/email"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:background="@drawable/editetext_background"
@@ -45,7 +45,7 @@
             android:layout_marginTop="60dp"
             android:inputType="text"
             android:gravity="center"
-            android:hint="Username:"
+            android:hint="Email:"
             android:textColorHint="@color/white"
             android:textSize="18dp"
             android:textStyle="bold"

@@ -30,7 +30,8 @@ class MainActivity : AppCompatActivity() {
             when (item.itemId) {
                 R.id.explor-> loadFragment(ExploreFragment(), false)
                 R.id.favorite -> loadFragment(FavouriteFragment(), false)
-                R.id.profile -> loadFragment(ProfileFragment(), false)
+                R.id.profile -> loadFragment( LoginFragment(),false)
+                R.id.about -> loadFragment(AboutFragment(),false)
 
             }
             true

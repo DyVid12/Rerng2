@@ -2,67 +2,49 @@ package com.example.rerngapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Parcel
-import android.os.Parcelable
-import android.util.Log
-import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.rerngapp.databinding.ActivityLoginBinding
+import com.google.firebase.auth.FirebaseAuth
 
-class LoginActivity() : AppCompatActivity(), Parcelable {
+class LoginActivity : AppCompatActivity() {
 
-    private lateinit var userEdt: EditText
-    private lateinit var passEdt: EditText
-    private lateinit var loginButton: Button
-
-    constructor(parcel: Parcel) : this() {
-
-    }
+    private lateinit var binding: ActivityLoginBinding
+    private lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        userEdt = findViewById(R.id.username)
-        passEdt = findViewById(R.id.password)
-        loginButton = findViewById(R.id.getInBnt)
+        firebaseAuth = FirebaseAuth.getInstance()
 
-        // Set an OnClickListener on the login button
-        loginButton.setOnClickListener {
-            val username = userEdt.text.toString()
-            val password = passEdt.text.toString()
+        // Navigate to SignupActivity
+        binding.register.setOnClickListener {
+            val intent = Intent(this, SignupActivity::class.java)
+            startActivity(intent)
+        }
 
-            Log.i("Test Credentials","Username: $username and Password : $password")
+        // Login button click listener
+        binding.getInBnt.setOnClickListener {
+            val email = binding.email.text.toString().trim()
+            val pass = binding.password.text.toString().trim()
 
-            if (username.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Please fill in your username and password", Toast.LENGTH_SHORT).show()
-            } else if (username == "ravit" && password == "ravit") {
-                // Start MainActivity upon successful login
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
-                Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
+            if (email.isNotEmpty() && pass.isNotEmpty()) {
+                firebaseAuth.signInWithEmailAndPassword(email, pass)
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            val intent = Intent(this, MainActivity::class.java)
+                            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                            startActivity(intent)
+                        } else {
+                            val errorMessage = task.exception?.localizedMessage ?: "Login failed!"
+                            Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT).show()
+                        }
+                    }
             } else {
-                Toast.makeText(this, "Invalid username or password", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Empty fields are not allowed!", Toast.LENGTH_SHORT).show()
             }
-        }
-    }
-
-    override fun writeToParcel(parcel: Parcel, flags: Int) {
-
-    }
-
-    override fun describeContents(): Int {
-        return 0
-    }
-
-    companion object CREATOR : Parcelable.Creator<LoginActivity> {
-        override fun createFromParcel(parcel: Parcel): LoginActivity {
-            return LoginActivity(parcel)
-        }
-
-        override fun newArray(size: Int): Array<LoginActivity?> {
-            return arrayOfNulls(size)
         }
     }
 }
