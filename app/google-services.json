@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "419949793888",
+    "project_id": "rerngapploginsignup",
+    "storage_bucket": "rerngapploginsignup.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419949793888:android:69828b5d7d9682393fa905",
+        "android_client_info": {
+          "package_name": "com.example.rerngapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAE-MwbN7-Nvf3-_uK0SmgRsEF0w_fXfYw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
