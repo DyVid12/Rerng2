@@ -7,12 +7,21 @@
     android:orientation="vertical"
     android:gravity="center">
 
-   <Button
-       android:id="@+id/bottunlogin"
-       android:layout_width="300dp"
-       android:layout_height="60dp"
-       android:text="Login Now"
-       android:backgroundTint="@color/Orange"
-       android:textSize="20sp"/>
+
+   <LinearLayout
+       android:id="@+id/lytlogin"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical"
+       android:gravity="center">
+
+      <Button
+          android:id="@+id/bottunlogin"
+          android:layout_width="300dp"
+          android:layout_height="60dp"
+          android:text="Login Now"
+          android:backgroundTint="@color/Orange"
+          android:textSize="20sp"/>
+   </LinearLayout>
 
 </LinearLayout>

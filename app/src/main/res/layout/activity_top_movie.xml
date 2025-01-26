@@ -6,65 +6,94 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/Dark_black"
     tools:context=".Activity.TopMovieActivity">
 
+    <!-- Main Layout for Movie Info -->
     <LinearLayout
-        android:background="#75b0eb"
+        android:id="@+id/mainLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:padding="10dp">
+        android:background="@drawable/card_background"
+       >
 
-       <ImageView
-           android:id="@+id/imageTopMovies"
-           android:layout_width="200dp"
-           android:layout_height="200dp"
-           android:src="@drawable/spider_man"/>
+        <!-- Movie Poster -->
+
+
+        <androidx.cardview.widget.CardView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/imageCard"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_marginEnd="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            app:cardUseCompatPadding="true"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/imageTopMovies"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/spider_man"
+                android:background="@drawable/image_border"
+                android:contentDescription="Movie Poster"
+                android:scaleType="fitCenter" />
+        </androidx.cardview.widget.CardView>
+
+
 
         <LinearLayout
-            android:layout_width="200dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:orientation="vertical"
-            android:padding="10dp">
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp">
 
             <TextView
                 android:id="@+id/titleTopMovies"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="title"
-                android:textColor="@color/white"
-                android:textSize="15dp"
-                android:textStyle="bold" />
+                android:text="Title"
+                android:textColor="#FFD65A"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:paddingBottom="8dp" />
 
             <TextView
                 android:id="@+id/releasdateTopMovies"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="releasdate"
-                android:textColor="@color/white" />
+                android:text="Release Date"
+                android:textColor="#FFD65A"
+                android:textSize="14sp"
+                android:paddingBottom="8dp" />
 
             <TextView
                 android:id="@+id/vote_average"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:text="vote_average"
-                android:textColor="@color/white" />
+                android:text="Vote Average: 8.5"
+                android:textColor="#FFD65A"
+                android:textSize="14sp"
+                android:paddingBottom="4dp" />
 
             <TextView
                 android:id="@+id/vote_count"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
-                android:text="vote_count"
-                android:textColor="@color/white" />
-
+                android:text="Vote Count: 3500"
+                android:textColor="#FFD65A"
+                android:textSize="14sp" />
         </LinearLayout>
-
-
     </LinearLayout>
+
+    <!-- Additional Information -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -76,36 +105,36 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/original_language"
-            android:text="oreginal_language"
+            android:text="Original Language"
             android:textStyle="bold"
-            android:textColor="@color/black"/>
+            android:textColor="#DFF2EB" />
 
         <TextView
             android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/original_title"
-            android:text="oreginal_title"
+            android:text="Original Title"
             android:textStyle="bold"
-            android:textColor="@color/black"/>
+            android:textColor="#DFF2EB" />
 
         <TextView
             android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/popularity"
-            android:text="popularity"
+            android:text="Popularity"
             android:textStyle="bold"
-            android:textColor="@color/black"/>
+            android:textColor="#DFF2EB" />
 
         <TextView
             android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/overview"
-            android:text="overview"
+            android:text="Overview"
             android:textStyle="bold"
-            android:textColor="@color/black"/>
+            android:textColor="#DFF2EB" />
 
         <WebView
             android:id="@+id/youtubeWebView"
@@ -113,10 +142,5 @@
             android:layout_height="250dp"
             android:layout_marginTop="20dp"
             tools:ignore="WebViewLayout" />
-
-
-
     </LinearLayout>
-
-
 </LinearLayout>

@@ -2,6 +2,7 @@ package com.example.rerngapp
 
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.FrameLayout
 import androidx.activity.enableEdgeToEdge
@@ -26,11 +27,20 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView = findViewById(R.id.bottom_navbar)
         frameLayout = findViewById(R.id.frameLayout)
 
+        // Retrieve email from intent
+        val userEmail = intent.getStringExtra("email") ?: "No Email"
+        Log.d("MainActivity", "Email retrieved from intent: $userEmail")
+
+
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.explor-> loadFragment(ExploreFragment(), false)
                 R.id.favorite -> loadFragment(FavouriteFragment(), false)
-                R.id.profile -> loadFragment( LoginFragment(),false)
+                R.id.profile -> {
+                    val args = Bundle()
+                    args.putString("email", userEmail) // Pass the email to the fragment
+                    loadFragment(UserAccountFragment(), false, args)
+                }
                 R.id.about -> loadFragment(AboutUsFragment(),false)
 
             }
@@ -39,7 +49,11 @@ class MainActivity : AppCompatActivity() {
         }
         loadFragment(ExploreFragment(), true)
         }
-    private fun loadFragment(fragment: Fragment, isAppInitialized: Boolean) {
+    private fun loadFragment(fragment: Fragment, isAppInitialized: Boolean, args: Bundle? = null) {
+        args?.let {
+            fragment.arguments = it
+        }
+
         val fragmentManager: FragmentManager = supportFragmentManager
         val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
 

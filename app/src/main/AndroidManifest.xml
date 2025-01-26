@@ -20,9 +20,6 @@
             android:name=".SignupActivity"
             android:exported="false" />
         <activity
-            android:name=".MovieViewModel"
-            android:exported="false" />
-        <activity
             android:name=".Activity.TopMovieActivity"
             android:exported="false" />
         <activity

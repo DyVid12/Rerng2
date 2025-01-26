@@ -1,16 +1,19 @@
 package com.example.rerngapp.Activity
 
+import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Bundle
 import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.MediaController
 import android.widget.TextView
 import android.widget.VideoView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.rerngapp.R
@@ -34,6 +37,25 @@ class TopMovieActivity : AppCompatActivity() {
 
         // Use a sample video URL since the API video field is null
         val videoUrl = "https://youtu.be/hDZ7y8RP5HE?si=x9r-TPm4ABNTXuVW"
+
+        val mainLayout = findViewById<LinearLayout>(R.id.mainLayout)
+
+        // Load poster image as background
+        val posterUrl = "https://image.tmdb.org/t/p/w500$posterPath"
+        Picasso.get().load(posterUrl).into(object : com.squareup.picasso.Target {
+            override fun onBitmapLoaded(bitmap: android.graphics.Bitmap?, from: Picasso.LoadedFrom?) {
+                mainLayout.background = android.graphics.drawable.BitmapDrawable(resources, bitmap)
+            }
+
+            override fun onBitmapFailed(e: Exception?, errorDrawable: Drawable?) {
+                mainLayout.background = ContextCompat.getDrawable(this@TopMovieActivity, R.color.main_color) // Set default background in case of failure
+            }
+
+            override fun onPrepareLoad(placeHolderDrawable: Drawable?) {
+                // Optional: Set a placeholder background
+                mainLayout.background = ContextCompat.getDrawable(this@TopMovieActivity, R.color.brown)
+            }
+        })
 
 
         val imageTopMovies = findViewById<ImageView>(R.id.imageTopMovies)
