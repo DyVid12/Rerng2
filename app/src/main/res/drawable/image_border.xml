@@ -1,0 +1,8 @@
+<!-- res/drawable/image_border.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@android:color/transparent" />
+    <stroke
+        android:width="8dp"
+        android:color="#74512D" /> <!-- Change the color to your preference -->
+    <corners android:radius="2dp" /> <!-- Optional: Add rounded corners -->
+</shape>
